@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member List</title>
+</head>
+<body>
+    <h1>Member List</h1>
+    <a th:href="@{/members/new}">Add new Member</a>
+    <ul>
+        <li th:each="member : ${members}">
+            <strong th:text="${member.name}">Member Name </strong> -
+            <span th:text="${member.email}">Email id </span> -
+            <em th:text="${member.team != null ? member.team.name : 'No Team'}">Team </em>
+            |
+            <a th:href="@{/members/edit/{id}(id=${member.id})}">Edit</a>
+            |
+            <a th:href="@{/members/delete/{id}(id=${member.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+        </li>
+    </ul>
+</body>
+</html>

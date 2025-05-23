@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Team List</title>
+</head>
+<body>
+    <h1>Team List</h1>
+    <a th:href="@{/teams/new}">Add new Team</a>
+    <ul>
+        <li th:each="team : ${teams}">
+            <strong th:text="${team.name}">Team Name</strong> -
+            <span th:text="${team.description}">Description</span>
+            |
+            <a th:href="@{/teams/edit/{id}(id = ${team.id})}">Edit</a>
+            |
+            <a th:href="@{/teams/delete/{id}(id = ${team.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+        </li>
+    </ul>
+</body>
+</html>
