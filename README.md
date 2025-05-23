@@ -22,7 +22,7 @@ JPA, H2, Lombok dependencies
       - @NoArgsConstructor, @ReqArgsConstructor, @AllArgsConstructor -> Used to automatically create necessary constructors
 
 ### Repository -
-  - An Interface which lets us allow contact with the DB
+  - An Interface which lets us contact the DB
   - Extends the JpaRepository Interface with the Model class object, and Long variable as the arguments
       (ie) for example,
       ```java
