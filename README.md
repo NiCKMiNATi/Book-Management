@@ -23,7 +23,7 @@ JPA, H2, Lombok dependencies
 
 ### Repository -
   - An Interface which lets us contact the DB
-  - Extends the JpaRepository Interface with the Model class object, and Long variable as the arguments
+  - Extends the JpaRepository Interface with the Model class object, and Long variable(primary key, in this case Id) as the arguments
       (ie) for example,
       ```java
       public interface MovieRepository extends JpaRepository<Movie, Long>
